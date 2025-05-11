@@ -26,7 +26,7 @@ def yes_no_check(question):
 
 
 def instructions():
-    make_statement("Discipline", "😊")
+    print(make_statement("Instructions", "😊"))
 
     print('''
 
@@ -340,7 +340,7 @@ else:
     fixed_heading_string = make_statement("You have no fixed Expenses", "-")
     fixed_subtotal_string = "Fixed Expenses Subtotal: $0.00"
 
-selling_price_heading = make_statement("selling Price Calculations", "👍")
+selling_price_heading = make_statement("selling Price Calculations", "=")
 profit_goal_string = f"Profit Goal: ${target:.2f}"
 sales_target_string = f"\nTotal Sales Needed: ${sales_target:.2f}"
 
@@ -364,3 +364,12 @@ for item in to_write:
     print(item)
 
 # create file to hold data (add .txt extension)
+file_name = "FRC_DETAILS"
+write_to = "{}. txt" .format(file_name)
+
+text_file = open(write_to, "w+")
+
+# write the item to file
+for item in to_write:
+    text_file.write(item)
+    text_file.write("\n")
